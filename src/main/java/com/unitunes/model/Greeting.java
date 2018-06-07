@@ -1,4 +1,4 @@
-package hello;
+package com.unitunes.model;
 
 public class Greeting {
 
