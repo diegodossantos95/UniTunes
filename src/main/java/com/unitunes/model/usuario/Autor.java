@@ -1,7 +1,12 @@
 package com.unitunes.model.usuario;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Autor extends Academico {
 	
+	@OneToOne
 	private ContaBancaria contaBancaria;
 	
 	public Autor() { }

@@ -1,24 +1,24 @@
 package com.unitunes.model.usuario;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import com.unitunes.pagamento.model.Comprador;
 
-public class Academico implements Comprador {
+@Entity
+public class Academico extends Comprador {
 	
-	private Long id;
+	
 	private String primeiroNome, segundoNome, email, senha, cpf;
+	private Float creditos;
 	private Long matricula;
+	
+	@Enumerated(EnumType.ORDINAL)
 	private TipoVinculo tipoVinculo;
 	
 	public Academico() {
 		
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getPrimeiroNome() {
@@ -69,6 +69,14 @@ public class Academico implements Comprador {
 		this.tipoVinculo = tipoVinculo;
 	}
 
+	public void setCreditos(Float creditos) {
+		this.creditos = creditos;
+	}
+	
+	public Float getCreditos() {
+		return creditos;
+	}
+	
 	public enum TipoVinculo {
 		Aluno(1), Professor(2), Funcionario(3);
 		

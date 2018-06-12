@@ -2,12 +2,29 @@ package com.unitunes.pagamento.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
 public class HistoricoPagamento {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	private Date data;
 	private Float valor;
+	
+	@Enumerated(EnumType.ORDINAL)
 	private MetodoPagamentoEnum metodo;
+	
+	@ManyToOne
 	private Comprador comprador;
 	
 	public HistoricoPagamento() {

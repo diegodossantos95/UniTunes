@@ -2,12 +2,27 @@ package com.unitunes.model.compra;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class HistoricoCredito {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Float valor;
 	private Date data;
+	
+	@Enumerated(EnumType.ORDINAL)
 	private TipoHistoricoEnum tipo;
+	
+	@OneToOne
 	private Compra compra;
 	
 	public HistoricoCredito() {
