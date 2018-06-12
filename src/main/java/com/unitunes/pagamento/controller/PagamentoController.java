@@ -6,11 +6,11 @@ import com.unitunes.pagamento.model.HistoricoPagamento;
 
 public interface PagamentoController {
 	
-	public HistoricoPagamento efetuarPagamento(Comprador c, Double valor);
+	public HistoricoPagamento efetuarPagamento(Comprador c, Float valor);
 	public void setMetodoPagamento(MetodoPagamento mp);
 	public void setAttr(Integer key, Object value);
 	public Object getAttr(Integer key);
 	public Comprador getComprador();
-	public Double getValor();
+	public Float getValor();
 
 }

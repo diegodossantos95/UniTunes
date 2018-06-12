@@ -6,7 +6,7 @@ public class HistoricoPagamento {
 	
 	private Long id;
 	private Date data;
-	private Double valor;
+	private Float valor;
 	private MetodoPagamentoEnum metodo;
 	private Comprador comprador;
 	
@@ -30,11 +30,11 @@ public class HistoricoPagamento {
 		this.data = data;
 	}
 
-	public Double getValor() {
+	public Float getValor() {
 		return valor;
 	}
 
-	public void setValor(Double valor) {
+	public void setValor(Float valor) {
 		this.valor = valor;
 	}
 

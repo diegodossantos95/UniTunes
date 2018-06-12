@@ -13,14 +13,14 @@ public class PagamentoControllerImpl implements PagamentoController {
 	private MetodoPagamento metodoPagamento;
 	private Map<Integer, Object> values;
 	private Comprador comprador;
-	private Double valor;
+	private Float valor;
 	
 	public PagamentoControllerImpl() {
 		this.values = new HashMap<>();
 	}
 
 	@Override
-	public HistoricoPagamento efetuarPagamento(Comprador c, Double valor) {
+	public HistoricoPagamento efetuarPagamento(Comprador c, Float valor) {
 		this.comprador = c;
 		this.valor = valor;
 		boolean pago = this.metodoPagamento.efetuarPagamento(this);
@@ -56,7 +56,7 @@ public class PagamentoControllerImpl implements PagamentoController {
 	}
 
 	@Override
-	public Double getValor() {
+	public Float getValor() {
 		return this.valor;
 	}
 
