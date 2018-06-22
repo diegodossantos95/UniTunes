@@ -1,6 +1,8 @@
 package com.unitunes.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,5 +32,19 @@ public class MidiaController {
 		Midia savedMidia = midiaService.atualizarMidia(id, midia);
 		
 		return savedMidia;
+	}
+	
+	@GetMapping(value = "/{id}")
+	public Midia visualizarMidia(@PathVariable Long id){
+		Midia readMidia = midiaService.visualizarMidia(id);
+		
+		return readMidia;
+	}
+	
+	@DeleteMapping(value = "/{id}")
+	public Midia deletarMidia(@PathVariable Long id){
+		Midia deletedMidia = midiaService.deletarMidia(id);
+		
+		return deletedMidia;
 	}
 }

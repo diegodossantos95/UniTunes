@@ -35,6 +35,30 @@ public class MidiaService {
 		return savedMidia;
 	}
 	
+	public Midia visualizarMidia(Long id){
+		Optional<Midia> midia = midiaRepository.findById(id);
+		
+		if(!midia.isPresent()){
+			throw new RuntimeException();
+		}
+		
+		return midia.get();
+	}
+	
+	public Midia deletarMidia(Long id){
+		Optional<Midia> midia = midiaRepository.findById(id);
+		
+		if(!midia.isPresent()){
+			throw new RuntimeException();
+		}
+		
+		Midia deletedMidia = midia.get();
+
+		midiaRepository.delete(deletedMidia);
+		
+		return deletedMidia;
+	}
+	
 	private Midia atualizarCampos(Midia oldMidia, Midia newMidia){
 		oldMidia.setCategoria(newMidia.getCategoria());
 		oldMidia.setConteudo(newMidia.getConteudo());
