@@ -3,10 +3,12 @@ package com.unitunes.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.unitunes.model.Midia;
 import com.unitunes.repositories.MidiaRepository;
 
+@Service
 public class MidiaService {
 
 	@Autowired
