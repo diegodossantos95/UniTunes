@@ -1,10 +1,26 @@
 package com.unitunes.model.lista;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.unitunes.model.Midia;
+
+@Entity
 public class ListaFavorito {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
-	private ListaMidia lista;
+	
+	@OneToMany()
+    private List<Midia> midias = new ArrayList<Midia>();
 	
 	public Long getId() {
 		return id;
@@ -21,12 +37,12 @@ public class ListaFavorito {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public ListaMidia getLista() {
-		return lista;
+	
+	public List<Midia> getMidias() {
+		return midias;
 	}
 
-	public void setLista(ListaMidia lista) {
-		this.lista = lista;
+	public void setMidias(List<Midia> midias) {
+		this.midias = midias;
 	}
 }
