@@ -17,12 +17,13 @@ import com.unitunes.model.usuario.Academico;
 import com.unitunes.pagamento.model.HistoricoPagamento;
 @Entity
 public class Compra {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private Date data;
 	
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private TipoCompraEnum tipo;
 	
 	@OneToOne(optional = true)

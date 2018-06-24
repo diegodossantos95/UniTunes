@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+
+import com.unitunes.model.usuario.Academico.TipoVinculo;
 
 @Entity
 public class Midia {
@@ -23,6 +26,12 @@ public class Midia {
 	
 	public Midia() { 
 		
+	}
+	
+	@PrePersist
+	void preInsert() {
+	   if (this.dataCriacao == null)
+	       this.dataCriacao = new Date();
 	}
 
 	public Long getId() {

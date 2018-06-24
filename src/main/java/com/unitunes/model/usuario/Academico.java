@@ -3,6 +3,7 @@ package com.unitunes.model.usuario;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.PrePersist;
 
 import com.unitunes.pagamento.model.Comprador;
 
@@ -14,11 +15,19 @@ public class Academico extends Comprador {
 	private Float creditos;
 	private Long matricula;
 	
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private TipoVinculo tipoVinculo;
 	
 	public Academico() {
 		
+	}
+	
+	@PrePersist
+	void preInsert() {
+	   if (this.tipoVinculo == null)
+	       this.tipoVinculo = TipoVinculo.Aluno;
+	   if (this.creditos == null) 
+		   this.creditos = 0.0f;
 	}
 
 	public String getPrimeiroNome() {
