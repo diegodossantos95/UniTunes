@@ -2,7 +2,6 @@ package com.unitunes.controller;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
@@ -10,7 +9,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.unitunes.model.Midia;
 import com.unitunes.model.compra.Compra;
-import com.unitunes.model.compra.HistoricoCredito;
 import com.unitunes.model.compra.Compra.TipoCompraEnum;
+import com.unitunes.model.compra.HistoricoCredito;
 import com.unitunes.model.compra.HistoricoCredito.TipoHistoricoEnum;
 import com.unitunes.model.usuario.Academico;
 import com.unitunes.pagamento.controller.PagamentoController;

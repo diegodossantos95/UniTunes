@@ -8,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
 
-import com.unitunes.model.usuario.Academico.TipoVinculo;
-
 @Entity
 public class Midia {
 	
